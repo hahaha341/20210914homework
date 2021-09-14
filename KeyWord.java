@@ -12,15 +12,12 @@ public class KeyWord {
 
 
         //所有的java的关键词
-        String[] keywordString = {"abstract", "finally", "public",
-                "boolean", "float", "return", "break", "for", "short", "byte",
-                "goto", "static", "case", "if", "super", "catch", "implements",
-                "switch", "char", "import", "synchronized", "class",
-                "instanceof", "this", "const", "int", "throw", "continue",
-                "interface", "throws", "default", "long", "transient", "do",
-                "native", "try", "double", "new", "void", "else", "package",
-                "volatile", "extends", "private", "while", "final",
-                "protected", "true", "null"};
+        String[] keywordString = {"auto", "break", "case",
+                "char", "const", "continue", "default", "do", "double", "else",
+                "enum", "extern", "float", "for", "goto", "if", "int",
+                "long", "register", "return", "short", "signed",
+                "sizeof", "static", "struct", "switch", "typedef", "union",
+                "unsigned", "void", "volatile", "while"};
         //将字符串数组转化成一个集合，集合的名字时keywordset
         Set<String> keywordSet =
                 new HashSet<String>(Arrays.asList(keywordString));
@@ -28,7 +25,7 @@ public class KeyWord {
 
         try {
             //通过scanner和new file的方法引入一个文本
-            Scanner input = new Scanner(new File("sources.txt"));
+            Scanner input = new Scanner(new File("sources1.txt"));
             //hasnext方法再缓冲区内依次扫描单词
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
