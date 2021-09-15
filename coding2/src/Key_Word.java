@@ -13,7 +13,6 @@ public class Key_Word {
                 "long", "register", "return", "short", "signed",
                 "sizeof", "static", "struct", "switch", "typedef", "union",
                 "unsigned", "void", "volatile", "while"};
-        String[] keywordString1 = {"switch", "case"};
         int []result=new int [10];
         /*// Check usage
         if (args.length != 1) {
@@ -48,8 +47,6 @@ public class Key_Word {
         else if(branch ==2){
             int flag =0;int flag1=0;
             for(int i=0;i<10;i++) result[i]=0;
-            Set<String> keywordSet =
-                    new HashSet<String>(Arrays.asList(keywordString1));
             int count = 0;
             try {
                 Scanner input = new Scanner(new File("sources2.txt"));
@@ -76,6 +73,9 @@ public class Key_Word {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+        }
+        else if(branch == 3){
+
         }
     }
 }
