@@ -75,6 +75,22 @@ public class Key_Word {
             }
         }
         else if(branch == 3){
+            int count = 0;
+            try {
+                Scanner input = new Scanner(new File("sources3.txt"));
+                while (input.hasNext()) {
+                    String token = input.next();//返回集合中的一个元素token
+                    if (token.contains("if"))//如果token和keywordset集合中的元素有重合
+                        count++;//关键词个数加一
+                }
+                //统计结束，输出关键词的总个数
+                System.out.println("The number of if-else structure in the program is "
+                        + count);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        else if(branch == 4){
 
         }
     }
