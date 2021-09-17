@@ -69,6 +69,7 @@ public class Key_Word {
             }
         }
         else if(branch == 3){
+            int flag=0;
             int count = 0;
             try {
                 Scanner input = new Scanner(new File("resources5.txt"));
@@ -85,6 +86,21 @@ public class Key_Word {
                         }
                     }
                 }*/
+                while (input.hasNext()) {
+                    String token = input.next();//返回集合中的一个元素token
+                    if (token.contains("if")) {//如果token和keywordset集合中的元素有重合
+                        flag=1;
+                    }
+                    else if(token.contains("else")){
+                        String token1 = input.next();
+                        if(token1.contains("if")) continue;
+                        else if(flag==1){
+                            count++;
+                            flag=0;
+                            flag=0;
+                        }
+                    }
+                }
                 //统计结束，输出关键词的总个数
                 System.out.println("The number of if-else structure in the program is "
                         + count);
