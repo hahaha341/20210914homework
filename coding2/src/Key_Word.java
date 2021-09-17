@@ -73,19 +73,6 @@ public class Key_Word {
             int count = 0;
             try {
                 Scanner input = new Scanner(new File("resources5.txt"));
-                /*while (input.hasNext()) {
-                    String token = input.next();//返回集合中的一个元素token
-                    if (token.contains("if"))//如果token和keywordset集合中的元素有重合
-                        stackHeap.push(token);
-                    else if(token.contains("else")){
-                        String token1 = input.next();
-                        if(token1.contains("if")) continue;
-                        else {
-                            stackHeap.pop();
-                            count++;
-                        }
-                    }
-                }*/
                 while (input.hasNext()) {
                     String token = input.next();//返回集合中的一个元素token
                     if (token.contains("if")) {//如果token和keywordset集合中的元素有重合
@@ -93,13 +80,23 @@ public class Key_Word {
                     }
                     else if(token.contains("else")){
                         String token1 = input.next();
+                        String token3=null;
                         if(token1.contains("if")) {
-                            continue;
+                            token3=token+" "+"if";
+                            if(token3.equals("else if")){//是else if，识别失败
+                                continue;
+                            }
+                            else{//不是else if,要同时将else和if进行处理
+                                //先处理else
+                                if(flag==1){
+                                    count++;flag=0;
+                                }
+                                //再处理if
+                                MyUtil.if_Fun();
+                            }
                         }
-                        else if(flag==1){
-                            count++;
-                            flag=0;
-                            flag=0;
+                        else{//是else
+                            count=MyUtil.else_Fun(count);
                         }
                     }
                 }
