@@ -109,26 +109,29 @@ public class Key_Word {
             }
         }
         else if(branch == 4){
-            int flag =0;int flag1=0;
-            for(int i=0;i<10;i++) result[i]=0;
+            int flag=0;
             int count = 0;
             try {
-                Scanner input = new Scanner(new File("sources3.txt"));
-                //找到if头头之后找到一个对应的else if，整个语句才算成立
+                Scanner input = new Scanner(new File("resources5.txt"));
                 while (input.hasNext()) {
-                    String token = input.next();
-                    if (token.contains("if")) {//找if头头
-
+                    String token = input.next();//返回集合中的一个元素token
+                    if (token.contains("if")) {//如果token和keywordset集合中的元素有重合
+                        stackHeap.push(token);
                     }
-                    if(token.contains("else if")){
+                    else if(token.contains("else")){
+                        String token1 = input.next();
+                        if(token1.contains("if")) {//是else if
+                            token1=token+" "+token1;
+                            stackHeap.push(token1);
+                        }
+                        else if(flag==1){//是else
 
+                        }
                     }
                 }
-                System.out.println("有"+count+"组if-else if-else语句");
-                /*for(int i=0;i<count;i++)
-                {
-                    System.out.println("第"+(i+1)+"组有"+result[count]+"个case");
-                }*/
+                //统计结束，输出关键词的总个数
+                System.out.println("The number of if-else if-else structure in the program is "
+                        + count);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
