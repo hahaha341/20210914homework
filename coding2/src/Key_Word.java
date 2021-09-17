@@ -120,11 +120,13 @@ public class Key_Word {
                         MyUtil.if_Fun();
                     }
                     else if(token.contains("else")){
-                        String token1 = input.next();String token3=null;
+                        String token1 = input.next();
+                        String token3=null;
                         if(token1.contains("if")) {
                             token3=token+" "+"if";
                             if(token3.equals("else if")){//是else if
-                                MyUtil.elseif_Fun();}
+                                MyUtil.elseif_Fun();
+                            }
                             else{//不是else if,要同时将else和if进行处理
                                 //先处理else
                                 count=MyUtil.else_Fun(count);
@@ -133,7 +135,7 @@ public class Key_Word {
                             }
                         }
                         else{//是else
-                            MyUtil.else_Fun(count);
+                            count=MyUtil.else_Fun(count);
                             }
                         }
                     }
