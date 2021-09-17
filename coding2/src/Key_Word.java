@@ -93,7 +93,9 @@ public class Key_Word {
                     }
                     else if(token.contains("else")){
                         String token1 = input.next();
-                        if(token1.contains("if")) continue;
+                        if(token1.contains("if")) {
+                            continue;
+                        }
                         else if(flag==1){
                             count++;
                             flag=0;
@@ -109,32 +111,40 @@ public class Key_Word {
             }
         }
         else if(branch == 4){
-            int flag=0;
             int count = 0;
             try {
                 Scanner input = new Scanner(new File("resources5.txt"));
                 while (input.hasNext()) {
                     String token = input.next();//返回集合中的一个元素token
                     if (token.contains("if")) {//如果token和keywordset集合中的元素有重合
-                        stackHeap.push(token);
+                        MyUtil.if_Fun();
                     }
                     else if(token.contains("else")){
-                        String token1 = input.next();
-                        if(token1.contains("if")) {//是else if
-                            token1=token+" "+token1;
-                            stackHeap.push(token1);
+                        String token1 = input.next();String token3=null;
+                        if(token1.contains("if")) {
+                            token3=token+" "+"if";
+                            if(token3.equals("else if")){//是else if
+                                MyUtil.elseif_Fun();}
+                            else{//不是else if,要同时将else和if进行处理
+                                //先处理else
+                                count=MyUtil.else_Fun(count);
+                                //再处理if
+                                MyUtil.if_Fun();
+                            }
                         }
-                        else if(flag==1){//是else
-
+                        else{//是else
+                            MyUtil.else_Fun(count);
+                            }
                         }
                     }
-                }
                 //统计结束，输出关键词的总个数
                 System.out.println("The number of if-else if-else structure in the program is "
                         + count);
-            } catch (Exception ex) {
+                }
+            catch (Exception ex) {
                 ex.printStackTrace();
             }
         }
-    }
 }
+    }
+
