@@ -49,26 +49,20 @@ public class Key_Word {
             for(int i=0;i<10;i++) result[i]=0;
             int count = 0;
             try {
-                Scanner input = new Scanner(new File("sources2.txt"));
+                Scanner input = new Scanner(new File("resources5.txt"));
                 while (input.hasNext()) {
                     String token = input.next();
                     if (token.contains("switch")) {//找switch
-                        if(flag!=flag1){//之前在统计case，找到了一个新的switch头头
-                            flag1++;
-                        }
-                        if(flag==flag1){//找到了一个switch头头，数组的索引加一，flag再加一
-                            count++;
-                            flag++;
-                        }
+                        count++;
                     }
                     if(token.contains("case")){
                         result[count]++;//对应case的个数加一
                     }
                 }
                 System.out.println("有"+count+"组switch case语句");
-                for(int i=0;i<count;i++)
+                for(int i=1;i<=count;i++)
                 {
-                    System.out.println("第"+(i+1)+"组有"+result[count]+"个case");
+                    System.out.println("第"+i+"组有"+result[i]+"个case");
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -91,7 +85,29 @@ public class Key_Word {
             }
         }
         else if(branch == 4){
+            int flag =0;int flag1=0;
+            for(int i=0;i<10;i++) result[i]=0;
+            int count = 0;
+            try {
+                Scanner input = new Scanner(new File("sources3.txt"));
+                //找到if头头之后找到一个对应的else if，整个语句才算成立
+                while (input.hasNext()) {
+                    String token = input.next();
+                    if (token.contains("if")) {//找if头头
 
+                    }
+                    if(token.contains("else if")){
+
+                    }
+                }
+                System.out.println("有"+count+"组if-else if-else语句");
+                /*for(int i=0;i<count;i++)
+                {
+                    System.out.println("第"+(i+1)+"组有"+result[count]+"个case");
+                }*/
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
