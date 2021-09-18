@@ -13,7 +13,7 @@ public class branchMovement {
 
         try {
             //通过scanner和new file的方法引入一个文本
-            Scanner input = new Scanner(new File("sources1.txt"));
+            Scanner input = new Scanner(new File("resources5.txt"));
             //hasnext方法再缓冲区内依次扫描单词
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
@@ -57,7 +57,7 @@ public class branchMovement {
             Scanner input = new Scanner(new File("resources5.txt"));
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
-                if (token.contains("if")) {//如果token和keywordset集合中的元素有重合
+                if (token.contains("if")) {//是if
                     MyUtil.if_Fun();
                 }
                 else if(token.contains("else")){
