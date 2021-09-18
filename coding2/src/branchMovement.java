@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class branchMovement {
-    public static void branch1(String[] keywordString){
+    public static void branch1(String[] keywordString,String filename){
         //将字符串数组转化成一个集合，集合的名字时keywordset
         Set<String> keywordSet =
                 new HashSet<String>(Arrays.asList(keywordString));
@@ -13,7 +13,7 @@ public class branchMovement {
 
         try {
             //通过scanner和new file的方法引入一个文本
-            Scanner input = new Scanner(new File("resources5.txt"));
+            Scanner input = new Scanner(new File(filename));
             //hasnext方法再缓冲区内依次扫描单词
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
@@ -21,18 +21,18 @@ public class branchMovement {
                     count++;//关键词个数加一
             }
             //统计结束，输出关键词的总个数
-            System.out.println("The number of keywords in the program is "
+            System.out.println("total num: "
                     + count);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-    public static void branch2(int []result){
+    public static void branch2(int []result,String filename){
         int flag =0;int flag1=0;
         for(int i=0;i<10;i++) result[i]=0;
         int count = 0;
         try {
-            Scanner input = new Scanner(new File("resources5.txt"));
+            Scanner input = new Scanner(new File(filename));
             while (input.hasNext()) {
                 String token = input.next();
                 if (token.contains("switch")) {//找switch
@@ -42,19 +42,20 @@ public class branchMovement {
                     result[count]++;//对应case的个数加一
                 }
             }
-            System.out.println("有"+count+"组switch case语句");
+            System.out.println("switch num: "+count);
+            System.out.print("case num: ");
             for(int i=1;i<=count;i++)
             {
-                System.out.println("第"+i+"组有"+result[i]+"个case");
+                System.out.print(result[i]+" ");
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-    public static void branch3(){
+    public static void branch3(String filename){
         int count = 0;
         try {
-            Scanner input = new Scanner(new File("resources5.txt"));
+            Scanner input = new Scanner(new File(filename));
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
                 if (token.contains("if")) {//是if
@@ -82,16 +83,16 @@ public class branchMovement {
                 }
             }
             //统计结束，输出关键词的总个数
-            System.out.println("The number of if-else structure in the program is "
+            System.out.println("if-else num: "
                     + count);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-    public static void branch4(){
+    public static void branch4(String filename){
         int count = 0;
         try {
-            Scanner input = new Scanner(new File("resources5.txt"));
+            Scanner input = new Scanner(new File(filename));
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
                 if (token.contains("if")) {//如果token和keywordset集合中的元素有重合
@@ -118,7 +119,7 @@ public class branchMovement {
                 }
             }
             //统计结束，输出关键词的总个数
-            System.out.println("The number of if-else if-else structure in the program is "
+            System.out.println("if-elseif-else num: "
                     + count);
         }
         catch (Exception ex) {

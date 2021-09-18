@@ -16,18 +16,19 @@ public class Key_Word {
             System.exit(0);
         }*/
         Scanner s = new Scanner(System.in);
+        String filename=s.next();
         int branch = s.nextInt();
         if (branch == 1) {
-            branchMovement.branch1(keywordString);
+            branchMovement.branch1(keywordString,filename);
         }
         else if(branch ==2){
-            branchMovement.branch2(result);
+            branchMovement.branch2(result,filename);
         }
         else if(branch == 3){
-            branchMovement.branch3();
+            branchMovement.branch3(filename);
         }
         else if(branch == 4){
-            branchMovement.branch4();
+            branchMovement.branch4(filename);
         }
 }
     }
