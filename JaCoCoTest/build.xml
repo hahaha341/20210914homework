@@ -1,0 +1,22 @@
+<project default="report" xmlns:jacoco="antlib:org.jacoco.ant">
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="lib/jacocoant.jar" />
+    </taskdef>
+	<target name="report">
+		<jacoco:report>
+			<executiondata>
+				<file file="jacoco.exec" />
+			</executiondata>
+			<structure name="JaCoCo Ant Example">
+				<classfiles>
+					<fileset dir="bin" />
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="src" />
+				</sourcefiles>
+			</structure>
+			<html destdir="target" />
+			<csv destfile="target/report.csv" />
+		</jacoco:report>
+	</target>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jacocoagent.jar"/>
+	<classpathentry kind="lib" path="lib/jacocoant.jar"/>
+	<classpathentry kind="lib" path="lib/org.jacoco.agent-0.6.4.201312101107.jar"/>
+	<classpathentry kind="lib" path="lib/org.jacoco.ant-0.6.4.201312101107.jar"/>
+	<classpathentry kind="lib" path="lib/org.jacoco.core-0.6.4.201312101107.jar"/>
+	<classpathentry kind="lib" path="lib/org.jacoco.report-0.6.4.201312101107.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
