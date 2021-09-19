@@ -16,4 +16,22 @@ public class check5 {
         branchMovement.branch1(keywordString,"resources5.txt");
         Assert.assertEquals(35,branchMovement.count);
     }
+    @Test
+    public void testBranch2(){
+        branchMovement c = new branchMovement();
+        branchMovement.branch2("resources5.txt");
+        Assert.assertEquals(2,branchMovement.count);
+    }
+    @Test
+    public void testBranch3(){
+        branchMovement c = new branchMovement();
+        branchMovement.branch3("resources5.txt");
+        Assert.assertEquals(2,branchMovement.count);
+    }
+    @Test
+    public void testBranch4(){
+        branchMovement c = new branchMovement();
+        branchMovement.branch3("resources5.txt");
+        Assert.assertEquals(2,branchMovement.count);
+    }
 }
