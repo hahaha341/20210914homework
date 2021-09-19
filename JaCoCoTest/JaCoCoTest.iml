@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/jacocoagent.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/jacocoant.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/org.jacoco.agent-0.6.4.201312101107.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/org.jacoco.ant-0.6.4.201312101107.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/org.jacoco.core-0.6.4.201312101107.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/org.jacoco.report-0.6.4.201312101107.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="jacocoagent.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jacocoagent.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jacocoant.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jacocoant.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.jacoco.agent-0.6.4.201312101107.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/org.jacoco.agent-0.6.4.201312101107.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.jacoco.ant-0.6.4.201312101107.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/org.jacoco.ant-0.6.4.201312101107.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.jacoco.core-0.6.4.201312101107.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/org.jacoco.core-0.6.4.201312101107.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.jacoco.report-0.6.4.201312101107.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/org.jacoco.report-0.6.4.201312101107.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
