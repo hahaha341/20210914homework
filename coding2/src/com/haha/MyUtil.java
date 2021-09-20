@@ -20,7 +20,8 @@ public class MyUtil {
     }
     public static int else_Fun(int count1){
         try{
-            String x=null;
+            String x;
+            x= "haha";
             x=stackHeap.pop();
             if(x.equals("else if")){//如果是else if，则计数
                 count1++;

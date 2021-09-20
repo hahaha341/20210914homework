@@ -1,14 +1,20 @@
 package com.haha;
 
-import java.io.File;
+import java.io.*;
 import java.util.Scanner;
 //文本注释切分函数
 public class processing {
-    public static void process(String filename){
-        try {
+    public static String process(String filename) throws IOException {
+            String path1="D:\\coding/resources1.txt";
+            File file=new File(filename);
+            File file1=new File(path1);
+            BufferedReader br=new BufferedReader(new FileReader(file));
+            PrintWriter pw = new PrintWriter(file1);
+
+
             String token;
             int index=0;
-            Scanner input = new Scanner(new File(filename));
+            Scanner input = new Scanner(file);
             int flag1=0;
             int flag2=0;
             while (input.hasNextLine()) {
@@ -52,10 +58,10 @@ public class processing {
                 for(int i=0;i< charArray.length;i++){
                     token+=charArray[i];
                 }
-                System.out.println("haha? "+token);
+                pw.print(token+"\n");
             }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+
+        pw.close();//结束打印文本
+        return path1;
     }
 }
