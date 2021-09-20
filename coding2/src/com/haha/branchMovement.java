@@ -1,26 +1,24 @@
 package com.haha;
 import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 public class branchMovement {
     public static int count;
     public branchMovement(){}
     public static void branch1(String[] keywordString,String filename){
-        count=0;
-        //将字符串数组转化成一个集合，集合的名字时keywordset
-        Set<String> keywordSet =
-                new HashSet<String>(Arrays.asList(keywordString));
-
         try {
+            count=0;
             //通过scanner和new file的方法引入一个文本
             Scanner input = new Scanner(new File(filename));
             //hasnext方法再缓冲区内依次扫描单词
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
-                if (keywordSet.contains(token))//如果token和keywordset集合中的元素有重合
-                    count++;//关键词个数加一
+                for(int i=0;i<keywordString.length-1;i++)
+                {
+                    if(token.contains(keywordString[i])){
+                        count++;
+                        break;
+                    }
+                }
             }
             //统计结束，输出关键词的总个数
             System.out.println("total num: "
@@ -30,11 +28,9 @@ public class branchMovement {
         }
     }
     public static void branch2(String filename){
-        int []result=new int[10];
-        count=0;
-        int flag =0;int flag1=0;
-        for(int i=0;i<10;i++) result[i]=0;
         try {
+            int []result=new int[10000];
+            count=0;
             Scanner input = new Scanner(new File(filename));
             while (input.hasNext()) {
                 String token = input.next();
@@ -51,13 +47,15 @@ public class branchMovement {
             {
                 System.out.print(result[i]+" ");
             }
+            System.out.print("\n");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
     public static void branch3(String filename){
-        count = 0;
         try {
+            count = 0;
+            stackHeap.index=1;
             Scanner input = new Scanner(new File(filename));
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token
@@ -93,8 +91,9 @@ public class branchMovement {
         }
     }
     public static void branch4(String filename){
-        count = 0;
         try {
+            count = 0;
+            stackHeap.index=1;
             Scanner input = new Scanner(new File(filename));
             while (input.hasNext()) {
                 String token = input.next();//返回集合中的一个元素token

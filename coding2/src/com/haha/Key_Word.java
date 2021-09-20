@@ -3,23 +3,21 @@ package com.haha;
 public class Key_Word {
 
     public static void main(String[] args) {
-        //所有的c的关键词
         String[] keywordString = {"auto", "break", "case",
                 "char", "const", "continue", "default", "do", "double", "else",
                 "enum", "extern", "float", "for", "goto", "if", "int",
                 "long", "register", "return", "short", "signed",
                 "sizeof", "static", "struct", "switch", "typedef", "union",
                 "unsigned", "void", "volatile", "while"};
-        /*// Check usage
-        if (args.length != 1) {
-            System.out.println("Usage: Test.java");
-            System.exit(0);
-        }*/
         /*Scanner s = new Scanner(System.in);
         String filename=s.next();
         int branch = s.nextInt();*/
+        /*D:\\coding\\coding2\\resources5.txt"*/
+        int branch;
         String filename = "resources5.txt";
-        int branch=1;
+        processing.process(filename);
+        for(int i=1;i<=4;i++) {
+        	branch=i;
         if (branch == 1) {
             branchMovement.branch1(keywordString,filename);
         }
@@ -31,7 +29,7 @@ public class Key_Word {
         }
         else if(branch == 4){
             branchMovement.branch4(filename);
-        }
+        }}
 }
     }
 
